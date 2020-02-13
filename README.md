@@ -1,6 +1,6 @@
 # JS-Signals #
 
-[![Build Status](https://secure.travis-ci.org/millermedeiros/js-signals.png)](https://travis-ci.org/millermedeiros/js-signals)
+Custom event/messaging system for JavaScript based on [JS-Signals Project Page](http://millermedeiros.github.com/js-signals/). Unprioritized-signals is API compatible with js-signals, but ignores priorities for increased performance with large numbers of listeners.
 
 Custom event/messaging system for JavaScript inspired by [AS3-Signals](https://github.com/robertpenner/as3-signals).
 
@@ -9,14 +9,9 @@ For a more in-depth introduction read the [JS-Signals Project Page](http://mille
 
 ## Links ##
 
- * [Project Page](http://millermedeiros.github.com/js-signals/)
- * [Wiki](http://github.com/millermedeiros/js-signals/wiki/)
- * [Documentation](http://millermedeiros.github.com/js-signals/docs)
- * [Changelog](http://github.com/millermedeiros/js-signals/blob/master/CHANGELOG.md)
- * [CompoundSignal - special Signal kind](https://github.com/millermedeiros/CompoundSignal)
- * [jasmine-signals](https://github.com/AdamNowotny/jasmine-signals)
-   (Jasmine assertions to simplify signals testing)
-
+ * [Project Page](https://github.com/martinmcclure/js-unprioritized-signals)
+ * [Wiki](https://github.com/martinmcclure/js-unprioritized-signals/wiki/)
+ * [Changelog](https://github.com/martinmcclure/js-unprioritized-signals/blob/master/CHANGELOG.md)
 
 ## License ##
 
@@ -34,22 +29,9 @@ Files inside `dist` folder:
  * signals.js : Uncompressed source code with comments.
  * signals.min.js : Compressed code.
 
-You can install JS-Signals on Node.js using [NPM](http://npmjs.org/)
+You can install JS-Unprioritized-Signals on Node.js using [NPM](http://npmjs.org/)
 
-    npm install signals
-
-
-## CompoundSignal
-
-Note that there is an advanced Signal type called `CompoundSignal` that is
-compatible with js-signals v0.7.0+. It's useful for cases where you may need to
-execute an action after multiple Signals are dispatched. It was split into its'
-own repository since this feature isn't always needed and that way it can be
-easily distributed trough npm.
-
-[CompoundSignal repository](https://github.com/millermedeiros/CompoundSignal)
-
-
+    npm install unprioritized-signals
 
 ## Repository Structure ##
 

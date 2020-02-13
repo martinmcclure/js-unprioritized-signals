@@ -1,8 +1,9 @@
 {
-  "name": "js-signals",
+  "name": "js-unprioritized-signals",
   "version": "1.0.0",
-  "homepage": "http://millermedeiros.github.com/js-signals/",
+  "homepage": "https://github.com/martinmcclure/js-unprioritized-signals",
   "authors": [
+    "Martin McClure <martin.mcclure@gemtalksystems.com>" , 
     "millermedeiros <miller@millermedeiros.com>"
   ],
   "description": "Custom Event/Messaging System",

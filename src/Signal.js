@@ -11,9 +11,10 @@
 
     /**
      * Custom event broadcaster
-     * <br />- inspired by Robert Penner's AS3 Signals.
+     * <br />- Modified from Miller Medeiros' JS Signal.
+     * <br />- In turn inspired by Robert Penner's AS3 Signals.
      * @name Signal
-     * @author Miller Medeiros
+     * @author Martin McClure
      * @constructor
      */
     function Signal() {
@@ -70,24 +71,11 @@
          * @private
          */
         _registerListener : function (listener, isOnce, listenerContext, priority) {
-
-            var prevIndex = this._indexOfListener(listener, listenerContext),
-                binding;
-
-            if (prevIndex !== -1) {
-                binding = this._bindings[prevIndex];
-                if (binding.isOnce() !== isOnce) {
-                    throw new Error('You cannot add'+ (isOnce? '' : 'Once') +'() then add'+ (!isOnce? '' : 'Once') +'() the same listener without removing the relationship first.');
-                }
-            } else {
-                binding = new SignalBinding(this, listener, isOnce, listenerContext, priority);
-                this._addBinding(binding);
-            }
-
+            var binding = new SignalBinding(this, listener, isOnce, listenerContext, priority);
+            this._addBinding(binding);
             if(this.memorize && this._prevParams){
                 binding.execute(this._prevParams);
             }
-
             return binding;
         },
 
@@ -96,10 +84,7 @@
          * @private
          */
         _addBinding : function (binding) {
-            //simplified insertion sort
-            var n = this._bindings.length;
-            do { --n; } while (this._bindings[n] && binding._priority <= this._bindings[n]._priority);
-            this._bindings.splice(n + 1, 0, binding);
+            this._bindings.push(binding);
         },
 
         /**
@@ -223,8 +208,11 @@
             this._shouldPropagate = true; //in case `halt` was called before dispatch or during the previous dispatch.
 
             //execute all callbacks until end of the list or until a callback returns `false` or stops propagation
-            //reverse loop since listeners with higher priority will be added at the end of the list
-            do { n--; } while (bindings[n] && this._shouldPropagate && bindings[n].execute(paramsArr) !== false);
+            for (var i = 0; i < n; i++) {
+                if (!(this._shouldPropagate && bindings[i].execute(paramsArr) !== false)) {
+                    break;
+                }
+            }
         },
 
         /**

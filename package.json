@@ -1,20 +1,20 @@
 {
-    "name" : "signals",
+    "name" : "unprioritized-signals",
     "description" : "Custom Event/Messaging System",
-    "keywords" : ["js-signals", "signals", "pub/sub", "event", "publish", "subscribe", "observer"],
-    "homepage" : "http://millermedeiros.github.com/js-signals/",
+    "keywords" : ["js-unprioritized-signals", "unprioritized-signals", "js-signals", "signals", "pub/sub", "event", "publish", "subscribe", "observer"],
+    "homepage" : "https://github.com/martinmcclure/js-unprioritized-signals",
     "version" : "1.0.0",
     "author" : {
-        "name" : "Miller Medeiros",
-        "url" : "http://blog.millermedeiros.com/"
+        "name" : "Martin McClure",
+        "url" : "https://github.com/martinmcclure"
     },
     "repository" : {
         "type" : "git",
-        "url" : "https://github.com/millermedeiros/js-signals.git"
+        "url" : "https://github.com/martinmcclure/js-unprioritized-signals.git"
     },
     "main" : "dist/signals.js",
     "bugs" : {
-        "url" : "https://github.com/millermedeiros/js-signals/issues"
+        "url" : "https://github.com/martinmcclure/js-unprioritized-signals/issues"
     },
     "devDependencies" : {
         "jasmine-node" : "~1.0"
