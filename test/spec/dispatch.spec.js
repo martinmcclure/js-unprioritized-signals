@@ -25,7 +25,7 @@ describe('Dispatch', function () {
         });
 
 
-        it('should follow priority', function () {
+        it('should ignore priority', function () {
             var s = this.signal;
 
             var str = '';
@@ -38,11 +38,11 @@ describe('Dispatch', function () {
             s.add(l3, null, 2);
             s.dispatch();
             //ensure dispatch happened on proper order
-            expect( str ).toBe( 'bca' );
+            expect( str ).toBe( 'abc' );
         });
 
 
-        it('should respect default priority (0)', function () {
+        it('should ignore priority even if default (0)', function () {
             var s = this.signal;
             var str = '';
             var l1 = function(){str += 'a'};
@@ -53,7 +53,7 @@ describe('Dispatch', function () {
             s.add(l2, null, 1);
             s.add(l3);
             s.dispatch();
-            expect( str ).toBe( 'bac' );
+            expect( str ).toBe( 'abc' );
         });
 
 

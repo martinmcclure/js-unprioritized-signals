@@ -25,15 +25,15 @@ describe('SignalBinding', function () {
             });
 
 
-            it('should return same binding if trying to add same listener twice', function () {
+            it('should return different binding if trying to add same listener twice', function () {
                 var s = this.signal;
                 var l = function(){};
                 var b1 = s.addOnce(l);
                 var b2 = s.addOnce(l);
-                expect( s.getNumListeners() ).toBe( 1 );
+                expect( s.getNumListeners() ).toBe( 2 );
                 expect( b1.isOnce() ).toBe( true );
                 expect( b2.isOnce() ).toBe( true );
-                expect( b2 ).toBe( b1 );
+                expect( b2 ).not.toBe( b1 );
             });
         });
 
@@ -50,15 +50,15 @@ describe('SignalBinding', function () {
                 expect( b1 ).not.toBe( b2 );
             });
 
-            it('should return same binding if adding same listener twice', function () {
+            it('should return different binding if adding same listener twice', function () {
                 var s = this.signal;
                 var l = function(){};
                 var b1 = s.add(l);
                 var b2 = s.add(l);
-                expect( s.getNumListeners() ).toBe( 1 );
+                expect( s.getNumListeners() ).toBe( 2 );
                 expect( b1.isOnce() ).toBe( false );
                 expect( b2.isOnce() ).toBe( false );
-                expect( b2 ).toBe( b1 );
+                expect( b2 ).not.toBe( b1 );
             });
 
         });
