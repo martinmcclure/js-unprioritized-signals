@@ -5,7 +5,7 @@
  * JS Unprioritized Signals <https://github.com/martinmcclure/js-unprioritized-signals/>
  * Released under the MIT license
  * Author: Martin McClure, Miller Medeiros
- * Version: 1.0.0 - Build: 277 (2020/02/13 03:18 PM)
+ * Version: 1.0.2 - Build: 279 (2020/02/13 04:03 PM)
  */
 
 (function(global){
@@ -196,7 +196,7 @@
          * @type String
          * @const
          */
-        VERSION : '1.0.0',
+        VERSION : '1.0.2',
 
         /**
          * If Signal should keep record of previously dispatched parameters and

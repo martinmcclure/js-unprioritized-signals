@@ -3,7 +3,7 @@
     "description" : "Custom Event/Messaging System",
     "keywords" : ["js-unprioritized-signals", "unprioritized-signals", "js-signals", "signals", "pub/sub", "event", "publish", "subscribe", "observer"],
     "homepage" : "https://github.com/martinmcclure/js-unprioritized-signals",
-    "version" : "1.0.1",
+    "version" : "1.0.2",
     "author" : {
         "name" : "Martin McClure",
         "url" : "https://github.com/martinmcclure"
